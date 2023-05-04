@@ -15,7 +15,8 @@ namespace ConsoleApp1
         public DateTime? CreationTime { get; set; }
         public int LikeCount { get; set; }
         public int ViewCount { get; set; }
-
+        public bool Liked { get; set; }
+        public bool Viewed { get;set; }
         // => Constructor of `Post` class
         public Post(string? content, DateTime? creationTime, int likeCount, int viewCount)
         {

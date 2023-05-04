@@ -12,7 +12,7 @@ namespace ConsoleApp1
     {
 
         public Admin admin { get; set; }
-        public List<User> users{ get; set; }
+        public List<User> users { get; set; }
         public List<Post> generalposts { get; set; }
 
         // => Constructor of Facebook
@@ -24,10 +24,12 @@ namespace ConsoleApp1
         }
 
         // +> start
-        public void start() {// function scope
+        public void start()
+        {// function scope
             // +> Asking user or admin ?
             ConsoleKeyInfo key;
-            while (true) {// 1st while
+            while (true)
+            {// 1st while
                 Console.Clear();
                 Console.WriteLine("[1] - Admin");
                 Console.WriteLine("[2] - User");
@@ -65,7 +67,8 @@ namespace ConsoleApp1
                 }
 
                 // +> user
-                else if (key.Key == ConsoleKey.D2) {// function scope
+                else if (key.Key == ConsoleKey.D2)
+                {// function scope
                     int userindex = 0;
                     bool exist = false;
                     while (true)
@@ -103,7 +106,8 @@ namespace ConsoleApp1
                                 if (key.Key == ConsoleKey.D1)
                                 {
                                     Console.Clear();
-                                    for (int i = 0; i < generalposts.Count; i++) {
+                                    for (int i = 0; i < generalposts.Count; i++)
+                                    {
                                         while (true)
                                         {// 3rd while
                                             Console.Clear();
@@ -118,22 +122,37 @@ namespace ConsoleApp1
                                             // like
                                             if (key.Key == ConsoleKey.D1)
                                             {
-
+                                                if (generalposts[i].Liked == false)
+                                                {
+                                                    generalposts[i].Liked = true;
+                                                    generalposts[i].LikeCount += 1;
+                                                }
                                             }
 
                                             // next
                                             else if (key.Key == ConsoleKey.D2)
                                             {
+                                                if (generalposts[i].Viewed == false)
+                                                {
+                                                    generalposts[i].Viewed = true;
+                                                    generalposts[i].ViewCount += 1;
+                                                }
                                                 if (i == generalposts.Count - 1)
                                                 {
                                                     i = -1;
                                                 }
+
                                                 break;
                                             }
 
                                             // back
                                             else if (key.Key == ConsoleKey.D3)
                                             {
+                                                if (generalposts[i].Viewed == false)
+                                                {
+                                                    generalposts[i].Viewed = true;
+                                                    generalposts[i].ViewCount += 1;
+                                                }
                                                 if (i == 0)
                                                 {
                                                     i = -1;
@@ -147,9 +166,14 @@ namespace ConsoleApp1
                                             }
 
                                             // exit
-                                            else if (key.Key == ConsoleKey.D4) 
+                                            else if (key.Key == ConsoleKey.D4)
                                             {
                                                 i = generalposts.Count - 1;
+                                                if (generalposts[i].Viewed == false)
+                                                {
+                                                    generalposts[i].Viewed = true;
+                                                    generalposts[i].ViewCount += 1;
+                                                }
                                                 break;
                                             }
 
@@ -157,32 +181,40 @@ namespace ConsoleApp1
                                     }
                                 }
                                 else
+                                {
+                                    for (int i = 0; i < generalposts.Count; i++)
+                                    {
+                                        generalposts[i].Liked = false;
+                                        generalposts[i].Viewed = false;
+                                    }
                                     break;
+                                }
 
                             }// 2nd while
                         }
-                        else {
+                        else
+                        {
                             Console.Clear();
                             Console.WriteLine("User not found ! Try again !");
                             Thread.Sleep(2000);
                         }
-                        Console.Clear();
-                        Console.WriteLine("[1] - Back");
-                        Console.WriteLine("Any key to continue...");
-                        Console.Write("Choice here...");
-                        key = Console.ReadKey();
-                        if (key.Key == ConsoleKey.D1)
-                            break;
+                        //Console.Clear();
+                        //Console.WriteLine("[1] - Back");
+                        //Console.WriteLine("Any key to continue...");
+                        //Console.Write("Choice here...");
+                        //key = Console.ReadKey();
+                        //if (key.Key == ConsoleKey.D1)
+                        //    break;
                     }// 1st while
                 }// function scope
-            
-            
-            
+
+
+
             }// 1st while
-        
-        
-        
-        
+
+
+
+
         }// function scope
 
 
