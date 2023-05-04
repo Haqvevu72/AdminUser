@@ -26,5 +26,14 @@ namespace ConsoleApp1
             Password = password;
         }
 
+        // +> checking username(or email) and password
+        public bool IsUser(string? emailname, string? password)
+        {
+            if (emailname == Email || emailname == Name && password == Password)
+                return true;
+            else
+                return false;
+        }
+
     }
 }

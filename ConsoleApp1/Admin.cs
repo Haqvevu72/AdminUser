@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,22 @@ namespace ConsoleApp1
             Password = password;
             Posts = posts;
             Notifications = notifications;
+        }
+
+        // +> checking username(or email) and password
+        public bool IsAdmin() {
+            string? emailname;
+            Console.Write("Enter username(or email): ");
+            emailname = Console.ReadLine();
+
+            string? password;
+            Console.Write("Enter password: ");
+            password = Console.ReadLine();
+
+            if (emailname == Email || emailname == Username && password == Password)
+                return true;
+            else
+                return false;
         }
 
     }

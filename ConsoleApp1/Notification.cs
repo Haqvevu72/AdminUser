@@ -12,10 +12,10 @@ namespace ConsoleApp1
         public static int ID { get; set; } = 0;
         public string? Text { get; set; }
         public DateTime? SentTime { get; set; }
-        public User FromWho { get; set; }
+        public string? FromWho { get; set; }
 
         // => Constructor of `Notification` class
-        public Notification(string? text, DateTime? sentTime, User fromWho)
+        public Notification(string? text, DateTime? sentTime, string? fromWho)
         {
             Text = text;
             SentTime = sentTime;
@@ -25,7 +25,7 @@ namespace ConsoleApp1
         // => Overriding `ToString()` function
         public override string ToString()
         {
-            return $"ID: {ID}\nText: {Text}\nSent Time: {SentTime}\nFrom: {FromWho.Name}";
+            return $"ID: {ID}\nText: {Text}\nSent Time: {SentTime}\nFrom: {FromWho}";
         }
     }
 }
