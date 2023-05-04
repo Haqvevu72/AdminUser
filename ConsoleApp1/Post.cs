@@ -10,6 +10,7 @@ namespace ConsoleApp1
     {
 
         public static int ID { get; set; } = 0;
+        public int id { get; set; } = 0;
         public string? Content { get; set; }
         public DateTime? CreationTime { get; set; }
         public int LikeCount { get; set; }
@@ -18,7 +19,7 @@ namespace ConsoleApp1
         // => Constructor of `Post` class
         public Post(string? content, DateTime? creationTime, int likeCount, int viewCount)
         {
-            ID++;
+            id = ++ID;
             Content = content;
             CreationTime = creationTime;
             LikeCount = likeCount;
@@ -28,7 +29,7 @@ namespace ConsoleApp1
         // => Overriding `ToString()` method
         public override string ToString()
         {
-            return $"ID: {ID}\nContent: {Content}\nCreation Time: {CreationTime}\n" +
+            return $"ID: {id}\nContent: {Content}\nCreation Time: {CreationTime}\n" +
                 $"Like Count: {LikeCount}\nView Count: {ViewCount}";
         }
 

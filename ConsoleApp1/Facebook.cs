@@ -104,9 +104,56 @@ namespace ConsoleApp1
                                 {
                                     Console.Clear();
                                     for (int i = 0; i < generalposts.Count; i++) {
-                                        Console.WriteLine(generalposts[i].ToString());
-                                        Thread.Sleep(10000);
-                                        Console.Clear();
+                                        while (true)
+                                        {// 3rd while
+                                            Console.Clear();
+                                            Console.WriteLine(generalposts[i].ToString());
+                                            Console.WriteLine("[1] - Like");
+                                            Console.WriteLine("[2] - Next");
+                                            Console.WriteLine("[3] - Back");
+                                            Console.WriteLine("[4] - Exit");
+                                            Console.Write("Choice here...");
+                                            key = Console.ReadKey();
+
+                                            // like
+                                            if (key.Key == ConsoleKey.D1)
+                                            {
+
+                                            }
+
+                                            // next
+                                            else if (key.Key == ConsoleKey.D2)
+                                            {
+                                                if (i == generalposts.Count - 1)
+                                                {
+                                                    i = -1;
+                                                }
+                                                break;
+                                            }
+
+                                            // back
+                                            else if (key.Key == ConsoleKey.D3)
+                                            {
+                                                if (i == 0)
+                                                {
+                                                    i = -1;
+                                                    break;
+                                                }
+                                                else
+                                                {
+                                                    i -= 2;
+                                                    break;
+                                                }
+                                            }
+
+                                            // exit
+                                            else if (key.Key == ConsoleKey.D4) 
+                                            {
+                                                i = generalposts.Count - 1;
+                                                break;
+                                            }
+
+                                        }// 3rd while
                                     }
                                 }
                                 else

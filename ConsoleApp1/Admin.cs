@@ -11,6 +11,7 @@ namespace ConsoleApp1
     {
 
         public static int ID { get; set; } = 0;
+        public int id { get; set; } = 0;
         public string? Username { get; set; }
         public string? Email { get; set; }
         public string? Password { get; set; }
@@ -20,6 +21,7 @@ namespace ConsoleApp1
         // => Constructor of `Admin` class
         public Admin(string? username, string? email, string? password, List<Post> posts, List<Notification> notifications)
         {
+            id = ++ID;
             Username = username;
             Email = email;
             Password = password;

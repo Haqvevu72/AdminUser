@@ -11,6 +11,7 @@ namespace ConsoleApp1
 
         // => Fields of user
         public static int ID { get; set; } = 0;
+        public int id { get; set; } = 0;
         public string? Name { get; set; }
         public string? Surname { get; set; }
         public string? Email { get; set; } 
@@ -19,7 +20,7 @@ namespace ConsoleApp1
         // => Constructor of user
         public User(string? name, string? surname, string? email, string? password)
         {
-            ID++;
+            id = ++ID;
             Name = name;
             Surname = surname;
             Email = email;
